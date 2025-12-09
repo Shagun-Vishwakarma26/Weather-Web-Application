@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-info">
+                <h1 id="greeting" class="info-text-large"></h1>
+                <p id="current-date" class="info-text"></p>
+                <p id="current-time" class="info-text"></p>
+            </div>
+            
+            <div class="lang-selector">
+                <label for="language-select" data-i18n="lang-label">Language:</label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                     <option value="ma">Marathi</option>
+                   
+                   
+
+                </select>
+            </div>
+            
+            <form id="search-form">
+                <input type="text" id="city-input" placeholder="Mumbai" required>
+                <button type="submit" data-i18n="search-btn"><i class="fas fa-search"></i> <span data-i18n="search-btn">Search</span></button>
+            </form>
+        </header>
+
+        <main class="weather-card" id="weather-card">
+            <h2 id="city-name" class="data-text">Loading...</h2>
+            
+            <div class="weather-icon-container">
+                <img id="weather-icon" src="" alt="Weather Icon" class="hidden">
+            </div>
+            
+            <div class="weather-details">
+                <p class="temp-label" data-i18n="temp-label">Temperature:</p>
+                <p id="temperature" class="data-temp">--°C</p>
+                
+                <p class="desc-label" data-i18n="desc-label">Description:</p>
+                <p id="description" class="data-text">Fetching data...</p>
+                
+                <div class="humidity-section">
+                    <i class="fas fa-tint"></i>
+                    <p class="humidity-label" data-i18n="humidity-label">Humidity:</p>
+                    <p id="humidity" class="data-text-small">--%</p>
+                </div>
+            </div>
+
+            <div class="extra-features">
+                <button id="voice-btn" title="Read Weather Aloud">
+                    <i class="fas fa-volume-up"></i> <span data-i18n="voice-btn-text">Speak</span>
+                </button>
+            </div>
+            
+            <p id="error-message" class="error-text"></p>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
